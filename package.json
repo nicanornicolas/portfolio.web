@@ -1,0 +1,13 @@
+{
+  "name": "portfolio-web-root",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "cd nikotron-next && npm install && npm run build",
+    "start": "cd nikotron-next && npm run start",
+    "dev": "cd nikotron-next && npm run dev"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+} 

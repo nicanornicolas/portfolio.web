@@ -1,0 +1,7 @@
+{
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/nikotron-next/$1" }
+  ],
+  "buildCommand": "cd nikotron-next && npm install && npm run build",
+  "outputDirectory": "nikotron-next/.next"
+} 

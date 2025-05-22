@@ -18,6 +18,7 @@
     "@types/node": "20.3.1",
     "@types/react": "18.2.14",
     "@types/react-dom": "18.2.6",
+    "critters": "^0.0.20",
     "framer-motion": "^10.12.16",
     "next": "13.4.7",
     "react": "18.2.0",

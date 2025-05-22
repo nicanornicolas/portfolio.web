@@ -1,0 +1,10 @@
+{
+  "monorepo": true,
+  "buildCommand": "cd nikotron-next && npm install && npm run build",
+  "outputDirectory": "nikotron-next/.next",
+  "installCommand": "cd nikotron-next && npm install",
+  "framework": "nextjs",
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/nikotron-next/$1" }
+  ]
+} 

@@ -16,6 +16,9 @@ export const metadata: Metadata = {
     template: '%s | Nicanor Nicolas'
   },
   description: 'Professional portfolio of Nicanor Nicolas, Computer Engineer specializing in web development, AI/ML, and blockchain technologies.',
+  metadataBase: new URL(process.env.VERCEL_URL 
+    ? `https://${process.env.VERCEL_URL}` 
+    : 'https://nicanor-nicolas.vercel.app'),
   keywords: ['portfolio', 'web development', 'computer engineer', 'AI', 'blockchain', 'machine learning'],
   authors: [{ name: 'Nicanor Nicolas' }],
   creator: 'Nicanor Nicolas',

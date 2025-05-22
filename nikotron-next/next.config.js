@@ -47,6 +47,8 @@ const nextConfig = {
       },
     ]
   },
+  // Optimize CSS with critters
+  optimizeCss: true,
 }
 
 module.exports = nextConfig 

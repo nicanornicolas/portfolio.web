@@ -94,19 +94,19 @@ const ContactForm: React.FC = () => {
   return (
     <section 
       id="contact" 
-      className="py-20 bg-gray-50"
+      className="py-20 bg-gray-50 dark:bg-gray-900"
     >
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-gray-800 mb-4">
+          <h2 className="text-4xl font-bold text-gray-900 dark:text-gray-100 mb-4">
             Get in Touch
           </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <p className="text-gray-700 dark:text-gray-300 max-w-2xl mx-auto">
             Have a project in mind or want to collaborate? Send me a message!
           </p>
         </div>
 
-        <div className="max-w-lg mx-auto bg-white rounded-xl shadow-lg p-8">
+        <div className="max-w-lg mx-auto bg-white dark:bg-gray-800 rounded-xl shadow-lg dark:shadow-gray-900/50 p-8">
           <form 
             name="contact" 
             method="POST" 
@@ -117,85 +117,85 @@ const ContactForm: React.FC = () => {
             <input type="hidden" name="form-name" value="contact" />
 
             <div>
-              <label htmlFor="name" className="block text-gray-700 mb-2">Name</label>
+              <label htmlFor="name" className="block text-gray-800 dark:text-gray-200 mb-2 font-medium">Name</label>
               <input 
                 type="text" 
                 id="name"
                 name="name"
                 value={formData.name}
                 onChange={handleChange}
-                className={`w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 ${
+                className={`w-full px-4 py-2 border rounded-md bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 transition-colors ${
                   errors.name 
                     ? 'border-red-500 focus:ring-red-300' 
-                    : 'border-gray-300 focus:ring-primary-300'
+                    : 'border-gray-300 dark:border-gray-600 focus:ring-primary-300 dark:focus:ring-primary-500'
                 }`}
                 placeholder="Your Name"
               />
               {errors.name && (
-                <p className="text-red-500 text-sm mt-1">{errors.name}</p>
+                <p className="text-red-500 dark:text-red-400 text-sm mt-1">{errors.name}</p>
               )}
             </div>
 
             <div>
-              <label htmlFor="email" className="block text-gray-700 mb-2">Email</label>
+              <label htmlFor="email" className="block text-gray-800 dark:text-gray-200 mb-2 font-medium">Email</label>
               <input 
                 type="email" 
                 id="email"
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
-                className={`w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 ${
+                className={`w-full px-4 py-2 border rounded-md bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 transition-colors ${
                   errors.email 
                     ? 'border-red-500 focus:ring-red-300' 
-                    : 'border-gray-300 focus:ring-primary-300'
+                    : 'border-gray-300 dark:border-gray-600 focus:ring-primary-300 dark:focus:ring-primary-500'
                 }`}
                 placeholder="your.email@example.com"
               />
               {errors.email && (
-                <p className="text-red-500 text-sm mt-1">{errors.email}</p>
+                <p className="text-red-500 dark:text-red-400 text-sm mt-1">{errors.email}</p>
               )}
             </div>
 
             <div>
-              <label htmlFor="message" className="block text-gray-700 mb-2">Message</label>
+              <label htmlFor="message" className="block text-gray-800 dark:text-gray-200 mb-2 font-medium">Message</label>
               <textarea 
                 id="message"
                 name="message"
                 value={formData.message}
                 onChange={handleChange}
                 rows={4}
-                className={`w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 ${
+                className={`w-full px-4 py-2 border rounded-md bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 transition-colors resize-vertical ${
                   errors.message 
                     ? 'border-red-500 focus:ring-red-300' 
-                    : 'border-gray-300 focus:ring-primary-300'
+                    : 'border-gray-300 dark:border-gray-600 focus:ring-primary-300 dark:focus:ring-primary-500'
                 }`}
                 placeholder="Your message..."
               ></textarea>
               {errors.message && (
-                <p className="text-red-500 text-sm mt-1">{errors.message}</p>
+                <p className="text-red-500 dark:text-red-400 text-sm mt-1">{errors.message}</p>
               )}
             </div>
 
             <button 
               type="submit" 
               disabled={submitStatus === 'submitting'}
-              className={`w-full py-3 rounded-md text-white transition-colors duration-300 ${
+              className={`w-full py-3 rounded-md text-white font-medium transition-colors duration-300 ${
                 submitStatus === 'submitting'
-                  ? 'bg-gray-400 cursor-not-allowed'
-                  : 'bg-primary-500 hover:bg-primary-600 focus:outline-none focus:ring-2 focus:ring-primary-300'
+                  ? 'bg-gray-400 dark:bg-gray-600 cursor-not-allowed'
+                  : 'bg-primary-500 dark:bg-primary-600 hover:bg-primary-600 dark:hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-primary-300 dark:focus:ring-primary-500'
               }`}
             >
               {submitStatus === 'submitting' ? 'Sending...' : 'Send Message'}
             </button>
 
             {submitStatus === 'success' && (
-              <div className="mt-4 text-center text-green-600">
+              <div className="mt-4 text-center text-green-600 dark:text-green-400 font-medium">
                 Message sent successfully! I'll get back to you soon.
               </div>
             )}
 
             {submitStatus === 'error' && (
-              <div className="mt-4 text-center text-red-600">
+              <div className="mt-4 text-center text-red-600 dark:text-red-400 font-medium">
                 Oops! Something went wrong. Please try again.
               </div>
             )}

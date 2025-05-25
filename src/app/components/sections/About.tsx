@@ -25,16 +25,16 @@ const About: React.FC = () => {
   return (
     <section 
       id="about" 
-      className="py-20 bg-white"
+      className="py-20 bg-white dark:bg-gray-800"
     >
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Professional Image */}
           <div className="relative group">
-            <div className="absolute -inset-2 bg-primary-100/50 rounded-xl blur-xl opacity-75 group-hover:opacity-100 transition duration-500"></div>
-            <div className="relative z-10 bg-white rounded-xl overflow-hidden shadow-lg">
+            <div className="absolute -inset-2 bg-primary-100/50 dark:bg-primary-900/30 rounded-xl blur-xl opacity-75 group-hover:opacity-100 transition duration-500"></div>
+            <div className="relative z-10 bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-lg dark:shadow-gray-900/50">
               <Image 
-                src="/images/professional-portrait.webp" 
+                src="/images/professional-potrait.png" 
                 alt="Nicanor Nicolas Professional Portrait"
                 width={600}
                 height={600}
@@ -45,10 +45,10 @@ const About: React.FC = () => {
 
           {/* About Content */}
           <div>
-            <h2 className="text-4xl font-bold text-gray-800 mb-6">
+            <h2 className="text-4xl font-bold text-gray-800 dark:text-gray-100 mb-6">
               About Me
             </h2>
-            <div className="space-y-4 text-gray-600 leading-relaxed">
+            <div className="space-y-4 text-gray-600 dark:text-gray-300 leading-relaxed">
               <p>
                 As a Computer Engineer with over three years of experience, I specialize in creating 
                 innovative solutions that bridge the gap between cutting-edge technologies and practical 
@@ -64,22 +64,22 @@ const About: React.FC = () => {
 
             {/* Professional Achievements */}
             <div className="mt-8">
-              <h3 className="text-2xl font-semibold text-gray-800 mb-4">
+              <h3 className="text-2xl font-semibold text-gray-800 dark:text-gray-100 mb-4">
                 Professional Achievements
               </h3>
               <div className="space-y-4">
                 {achievements.map((achievement) => (
                   <div 
                     key={achievement.title} 
-                    className="bg-gray-50 p-4 rounded-lg border-l-4 border-primary-500 hover:shadow-md transition-shadow"
+                    className="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg border-l-4 border-primary-500 dark:border-primary-400 hover:shadow-md transition-shadow"
                   >
-                    <h4 className="text-lg font-semibold text-gray-800">
+                    <h4 className="text-lg font-semibold text-gray-800 dark:text-gray-100">
                       {achievement.title}
                     </h4>
-                    <p className="text-gray-600 text-sm">
+                    <p className="text-gray-600 dark:text-gray-300 text-sm">
                       {achievement.description}
                     </p>
-                    <span className="text-xs text-primary-600 font-medium">
+                    <span className="text-xs text-primary-600 dark:text-primary-300 font-medium">
                       {achievement.year}
                     </span>
                   </div>
@@ -92,7 +92,7 @@ const About: React.FC = () => {
               <a 
                 href="/Nicanor_Nicolas_CV.pdf" 
                 download 
-                className="btn btn-primary inline-flex items-center"
+                className="btn btn-primary inline-flex items-center px-6 py-3 bg-primary-600 dark:bg-primary-500 text-white hover:bg-primary-700 dark:hover:bg-primary-600 transition-colors rounded-lg"
               >
                 Download CV
                 <svg 

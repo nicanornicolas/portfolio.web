@@ -10,7 +10,7 @@ const projects = [
     title: 'AI-Powered Chatbot',
     description: 'An advanced chatbot using Langchain and OpenAI, capable of context-aware conversations.',
     technologies: ['Python', 'Langchain', 'OpenAI', 'FastAPI'],
-    imageUrl: '/images/projects/ai-chatbot.webp',
+    imageUrl: '/images/projects/ai-chatbot.png',
     demoLink: 'https://ai-chatbot-demo.vercel.app',
     githubLink: 'https://github.com/nicanornicolas/ai-chatbot'
   },
@@ -19,7 +19,7 @@ const projects = [
     title: 'Blockchain Voting Platform',
     description: 'Decentralized voting system ensuring transparency and security using Ethereum smart contracts.',
     technologies: ['Solidity', 'React', 'Web3.js', 'Truffle'],
-    imageUrl: '/images/projects/blockchain-voting.webp',
+    imageUrl: '/images/projects/blockchain-voting.png',
     demoLink: 'https://blockchain-voting-demo.vercel.app',
     githubLink: 'https://github.com/nicanornicolas/blockchain-voting'
   },
@@ -28,7 +28,7 @@ const projects = [
     title: 'Machine Learning Dashboard',
     description: 'Interactive dashboard for real-time machine learning model performance tracking.',
     technologies: ['React', 'Django', 'TensorFlow', 'Chart.js'],
-    imageUrl: '/images/projects/ml-dashboard.webp',
+    imageUrl: '/images/projects/ml-dashboard.png',
     demoLink: 'https://ml-dashboard-demo.vercel.app',
     githubLink: 'https://github.com/nicanornicolas/ml-dashboard'
   }
@@ -39,7 +39,7 @@ const ProjectCard: React.FC<{ project: typeof projects[0] }> = ({ project }) => 
 
   return (
     <div 
-      className="bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-xl"
+      className="bg-white dark:bg-gray-800 rounded-xl shadow-lg dark:shadow-gray-900/50 overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-xl dark:hover:shadow-gray-900/70"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -57,14 +57,14 @@ const ProjectCard: React.FC<{ project: typeof projects[0] }> = ({ project }) => 
             <Link 
               href={project.demoLink} 
               target="_blank"
-              className="bg-white text-primary-500 px-4 py-2 rounded-full hover:bg-primary-500 hover:text-white transition-colors"
+              className="bg-white dark:bg-gray-800 text-primary-500 dark:text-primary-400 px-4 py-2 rounded-full hover:bg-primary-500 dark:hover:bg-primary-400 hover:text-white transition-colors"
             >
               Live Demo
             </Link>
             <Link 
               href={project.githubLink} 
               target="_blank"
-              className="bg-white text-gray-800 px-4 py-2 rounded-full hover:bg-gray-800 hover:text-white transition-colors"
+              className="bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-200 px-4 py-2 rounded-full hover:bg-gray-800 dark:hover:bg-gray-200 hover:text-white dark:hover:text-gray-800 transition-colors"
             >
               GitHub
             </Link>
@@ -72,17 +72,17 @@ const ProjectCard: React.FC<{ project: typeof projects[0] }> = ({ project }) => 
         )}
       </div>
       <div className="p-6">
-        <h3 className="text-xl font-semibold text-gray-800 mb-2">
+        <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-2">
           {project.title}
         </h3>
-        <p className="text-gray-600 mb-4">
+        <p className="text-gray-700 dark:text-gray-300 mb-4">
           {project.description}
         </p>
         <div className="flex flex-wrap gap-2">
           {project.technologies.map((tech) => (
             <span 
               key={tech} 
-              className="bg-primary-100 text-primary-800 text-xs px-2 py-1 rounded-full"
+              className="bg-primary-100 dark:bg-primary-900/30 text-primary-800 dark:text-primary-300 text-xs px-2 py-1 rounded-full"
             >
               {tech}
             </span>
@@ -97,14 +97,14 @@ const FeaturedProjects: React.FC = () => {
   return (
     <section 
       id="projects" 
-      className="py-20 bg-gray-50"
+      className="py-20 bg-gray-50 dark:bg-gray-900"
     >
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-gray-800 mb-4">
+          <h2 className="text-4xl font-bold text-gray-900 dark:text-gray-100 mb-4">
             Featured Projects
           </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <p className="text-gray-700 dark:text-gray-300 max-w-2xl mx-auto">
             Showcasing innovative solutions that demonstrate my technical expertise and creativity
           </p>
         </div>

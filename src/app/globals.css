@@ -11,30 +11,70 @@
 }
 
 body {
-  @apply font-sans text-base text-gray-800 bg-gray-50;
+  @apply font-sans text-base text-gray-900 dark:text-gray-100 bg-gray-50 dark:bg-gray-900;
   scroll-behavior: smooth;
 }
 
-/* Custom Button Styles */
-.btn {
-  @apply px-4 py-2 rounded-md transition-all duration-300 ease-in-out;
+/* Enhanced 3D Button Styles with Dark Mode */
+@layer components {
+  .btn {
+    @apply px-6 py-3 rounded-lg font-semibold
+           shadow-md hover:shadow-lg dark:shadow-gray-900/50
+           transform hover:-translate-y-0.5 active:translate-y-px active:shadow-sm
+           transition-all duration-200 ease-in-out
+           focus:outline-none focus:ring-2 focus:ring-offset-2 dark:focus:ring-offset-gray-800;
+  }
+
+  .btn-primary {
+    @apply bg-primary-500 dark:bg-primary-600 text-white hover:bg-primary-600 dark:hover:bg-primary-700 
+           focus:ring-primary-400 dark:focus:ring-primary-500
+           border-b-4 border-primary-700 dark:border-primary-800 active:border-b-2
+           hover:shadow-primary-500/25 shadow-primary-500/20;
+  }
+
+  .btn-outline {
+    @apply bg-transparent border-2 border-primary-500 dark:border-primary-400 
+           text-primary-500 dark:text-primary-400
+           hover:bg-primary-500 dark:hover:bg-primary-400 hover:text-white 
+           focus:ring-primary-400 dark:focus:ring-primary-500
+           hover:shadow-primary-500/25;
+  }
+
+  .btn-secondary {
+    @apply bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 
+           hover:bg-gray-300 dark:hover:bg-gray-600 
+           focus:ring-gray-400 dark:focus:ring-gray-500
+           border-b-4 border-gray-400 dark:border-gray-600 active:border-b-2
+           hover:shadow-gray-500/25;
+  }
+
+  /* Floating/Glowing effect for special buttons */
+  .btn-floating {
+    @apply relative overflow-hidden;
+  }
+
+  .btn-floating:before {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-r from-transparent via-white/20 dark:via-white/10 to-transparent 
+           transform -skew-x-12 -translate-x-full transition-transform duration-700;
+  }
+
+  .btn-floating:hover:before {
+    @apply translate-x-full;
+  }
 }
 
-.btn-primary {
-  @apply bg-primary-500 text-white hover:bg-primary-600 focus:outline-none focus:ring-2 focus:ring-primary-400;
-}
-
-.btn-outline {
-  @apply border border-primary-500 text-primary-500 hover:bg-primary-500 hover:text-white;
-}
-
-/* Scrollbar Styles */
+/* Scrollbar Styles with Dark Mode */
 ::-webkit-scrollbar {
-  @apply w-2 bg-gray-100;
+  @apply w-2 bg-gray-100 dark:bg-gray-800;
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-primary-300 rounded-full;
+  @apply bg-primary-300 dark:bg-primary-600 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-primary-400 dark:bg-primary-500;
 }
 
 /* Scroll Reveal Animations */
@@ -164,18 +204,35 @@ body {
 
 /* Typed Cursor Styles */
 .typed-cursor {
-  @apply text-primary-500 font-bold;
+  @apply text-primary-500 dark:text-primary-400 font-bold;
 }
 
-/* Responsive Typography */
+/* Responsive Typography with Dark Mode and Better Contrast */
 h1 {
-  @apply text-4xl md:text-5xl font-bold;
+  @apply text-4xl md:text-5xl font-bold text-gray-900 dark:text-gray-50;
 }
 
 h2 {
-  @apply text-3xl md:text-4xl font-semibold;
+  @apply text-3xl md:text-4xl font-semibold text-gray-900 dark:text-gray-50;
+}
+
+h3 {
+  @apply text-xl md:text-2xl font-semibold text-gray-900 dark:text-gray-100;
 }
 
 p {
-  @apply leading-relaxed;
+  @apply leading-relaxed text-gray-700 dark:text-gray-300;
+}
+
+/* Improved text contrast classes */
+.text-primary {
+  @apply text-gray-900 dark:text-gray-100;
+}
+
+.text-secondary {
+  @apply text-gray-700 dark:text-gray-300;
+}
+
+.text-muted {
+  @apply text-gray-600 dark:text-gray-400;
 } 

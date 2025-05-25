@@ -43,9 +43,9 @@ const skillCategories = [
 ]
 
 const SkillProgressBar: React.FC<{ progress: number }> = ({ progress }) => (
-  <div className="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+  <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
     <div 
-      className="bg-primary-500 h-2.5 rounded-full transition-all duration-500 ease-in-out" 
+      className="bg-primary-500 dark:bg-primary-400 h-2.5 rounded-full transition-all duration-500 ease-in-out" 
       style={{ width: `${progress}%` }}
     ></div>
   </div>
@@ -55,14 +55,14 @@ const Skills: React.FC = () => {
   return (
     <section 
       id="skills" 
-      className="py-20 bg-gray-50"
+      className="py-20 bg-white dark:bg-gray-800"
     >
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-gray-800 mb-4">
+          <h2 className="text-4xl font-bold text-gray-900 dark:text-gray-100 mb-4">
             My Skills
           </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <p className="text-gray-700 dark:text-gray-300 max-w-2xl mx-auto">
             A comprehensive overview of my technical expertise across various domains
           </p>
         </div>
@@ -71,9 +71,9 @@ const Skills: React.FC = () => {
           {skillCategories.map((category) => (
             <div 
               key={category.name} 
-              className="bg-white rounded-xl shadow-lg p-6 transform transition-all duration-300 hover:scale-105 hover:shadow-xl"
+              className="bg-gray-50 dark:bg-gray-700 rounded-xl shadow-lg dark:shadow-gray-900/50 p-6 transform transition-all duration-300 hover:scale-105 hover:shadow-xl dark:hover:shadow-gray-900/70"
             >
-              <h3 className="text-xl font-semibold text-gray-800 mb-6 text-center">
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-6 text-center">
                 {category.name}
               </h3>
               <div className="space-y-4">
@@ -81,7 +81,7 @@ const Skills: React.FC = () => {
                   <div key={skill.name} className="flex items-center space-x-4">
                     <div className="text-3xl w-12 text-center">{skill.icon}</div>
                     <div className="flex-grow">
-                      <div className="flex justify-between text-sm text-gray-600 mb-1">
+                      <div className="flex justify-between text-sm text-gray-700 dark:text-gray-300 mb-1">
                         <span>{skill.name}</span>
                         <span>{skill.progress}%</span>
                       </div>
